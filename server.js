@@ -16,8 +16,8 @@ app.use(morgan("dev"))
 // INDEX - GET
 
 app.get("/", (req, res) => {
-    //lets just get the name and image of all of them rendered on the page
-    res.send(pokemon)
+    //lets render the object over to index ejs where we will loop
+    res.render("index.ejs", {pokemon})
 })
 
 
