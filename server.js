@@ -22,7 +22,15 @@ app.get("/", (req, res) => {
 
 
 
+// SHOW - GET
 
+app.get("/:id", (req, res) => {
+    // variable to be the id
+    const id = req.params.id
+    // variable to represent the single index of pokempn
+    const poke = pokemon[id]
+    res.render("show.ejs", {poke, id})
+})
 
 
 
