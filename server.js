@@ -29,6 +29,19 @@ app.get("/pokemon/new", (req, res) => {
     res.render("new.ejs")
 })
 
+
+// EDIT - GET - create form to edit a certain pokemon
+
+app.get("/pokemon/:id/edit", (req, res) => {
+    // variable to be the id
+    const id = req.params.id
+    // variable to represent the single index of pokempn
+    const poke = pokemon[id]
+    //render to a update.ejs page which has a form
+    res.render("update.ejs", {poke, id})
+})
+
+
 // CREATE - POST
 
 app.post("/pokemon", (req, res) => {
