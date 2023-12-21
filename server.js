@@ -24,11 +24,23 @@ app.get("/pokemon", (req, res) => {
 // NEW - GET - create form to make a new Pokemon
 
 app.get("/pokemon/new", (req, res) => {
-    //create the body on req
-    const body = req.body
+    
     //render to a new.ejs page which has a form
     res.render("new.ejs")
 })
+
+// CREATE - POST
+
+app.post("/pokemon", (req, res) => {
+    // create the body of the req
+    const body = req.body
+    // push to the pokemon database
+    pokemon.push(body)
+    //redirect to pokemon site
+    res.redirect("/pokemon")
+})
+
+
 
 // SHOW - GET
 
