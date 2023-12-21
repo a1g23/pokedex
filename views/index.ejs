@@ -6,9 +6,12 @@
     <title>Pokedex</title>
 </head>
 <body>
+    <nav>
+        <a href="/pokemon/new">Add Pokemon</a>
+    </nav>
     <% for (let i = 0; i < pokemon.length; i++) { %>
         <h2><%=pokemon[i].name%></h2>
-        <a href="/<%= i %>"><img src="<%=pokemon[i].img%>"></a>
+        <a href="/pokemon/<%= i %>"><img src="<%=pokemon[i].img%>"></a>
     <% } %>
 </body>
 </html>
