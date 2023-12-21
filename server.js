@@ -37,6 +37,7 @@ app.post("/pokemon", (req, res) => {
     // push to the pokemon database
     pokemon.push(body)
     //redirect to pokemon site
+    pokemon.reverse()
     res.redirect("/pokemon")
 })
 
