@@ -6,10 +6,25 @@
     <title><%=poke.name%></title>
 </head>
 <body>
-    <nav>
-        <a href="/pokemon/new">Add Pokemon</a>
-        <a href="/pokemon">Pokemon List</a>
-    </nav>
+    <%- include("./partials/nav.ejs")%>
+
+    <h1><%=poke.name%></h1>
     <img src="<%=poke.img%>">
+    
+    <h2>Type</h2>
+    <ul>
+
+            <% for (let i = 0; i < poke.type.length; i++) { %>
+                <li><%=poke.type[i]%></li>
+            <% } %>
+        
+    </ul>
+
+    <h2>Stats</h2>
+    <ul>
+        <li>HP: <%=poke.stats.hp%></li>
+        <li>Attack: <%=poke.stats.attack%></li>
+        <li>Defense: <%=poke.stats.defense%></li>
+    </ul>
 </body>
 </html>
