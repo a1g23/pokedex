@@ -9,6 +9,8 @@ const pokemon = require("./models/pokemon.js")
 
 app.use(morgan("dev"))
 app.use(express.urlencoded({extended: true})) // body parser
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
 
 //routes
 
@@ -30,6 +32,11 @@ app.get("/pokemon/new", (req, res) => {
 })
 
 
+// DELETE - DELETE - option to delete a Pokemon
+
+app.delete("/pokemon/:id",)
+
+
 // EDIT - GET - create form to edit a certain pokemon
 
 app.get("/pokemon/:id/edit", (req, res) => {
@@ -38,7 +45,7 @@ app.get("/pokemon/:id/edit", (req, res) => {
     // variable to represent the single index of pokempn
     const poke = pokemon[id]
     //render to a update.ejs page which has a form
-    res.render("update.ejs", {poke, id})
+    res.render("edit.ejs", {poke, id})
 })
 
 
@@ -54,7 +61,19 @@ app.post("/pokemon", (req, res) => {
     res.redirect("/pokemon")
 })
 
+// UPDATE - PUT - update the database with info from the edit page
 
+app.put("/pokemon/:id", (req, res) => {
+    // variable to be the id
+    const id = req.params.id
+    // create the body of the req
+    const updatedPoke = req.body
+    
+    // update with the new information which is in the body
+    pokemon[id] = updatedPoke
+    // redirect back to index
+    res.redirect("/pokemon")
+})
 
 // SHOW - GET
 

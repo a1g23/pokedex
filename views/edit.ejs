@@ -8,9 +8,10 @@
 <body>
     <%- include("./partials/nav.ejs")%>
     <h1>Edit <%= poke.name %></h1>
-    <form action="/pokemon" method="post">
-        <label>Name: <input type="text" name="name" ></label>
-        <label>Type: <input type="text" name="type" ></label>
+    <form action="/pokemon/<%= id %>?_method=PUT" method="post">
+        <label>Name: <input type="text" name="name" value="<%= poke.name %>"/></label>
+        <label>Type: <input type="text" name="type" value="<%= poke.type %>"/></label>
+      
 
         <input type="submit" value="Edit">
 
