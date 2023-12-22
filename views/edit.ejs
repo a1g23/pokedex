@@ -6,14 +6,14 @@
     <title>Edit a Pokemon</title>
 </head>
 <body>
-    <%- include("./partials/nav.ejs")%>
+    <%- include("./nav.ejs")%>
     <h1>Edit <%= poke.name %></h1>
     <form action="/pokemon/<%= id %>?_method=PUT" method="post">
         <label>Name: <input type="text" name="name" value="<%= poke.name %>"/></label>
         <label>Type: <input type="text" name="type" value="<%= poke.type %>"/></label>
       
 
-        <input type="submit" value="Edit">
+        <input class="buttonClass" type="submit" value="Edit">
 
     </form>
 </body>

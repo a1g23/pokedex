@@ -6,13 +6,13 @@
     <title><%=poke.name%></title>
 </head>
 <body>
-    <%- include("./partials/nav.ejs")%>
+    <%- include("./nav.ejs")%>
 
     <h1><%=poke.name%></h1>
     <img src="<%=poke.img%>">
-    <a href="/pokemon/<%= id %>/edit">Edit</a>
-    <form action="/pokemon/<%= id %>?_method=DELETE" method="post">
-        <input type="submit" value="DELETE">
+    <form class="editDeleteForm" action="/pokemon/<%= id %>?_method=DELETE" method="post">
+        <a class="buttonClass" href="/pokemon/<%= id %>/edit">Edit</a>
+        <input class="buttonClass" type="submit" value="DELETE">
     </form>
     
     <h2>Type</h2>
