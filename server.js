@@ -34,7 +34,11 @@ app.get("/pokemon/new", (req, res) => {
 
 // DELETE - DELETE - option to delete a Pokemon
 
-app.delete("/pokemon/:id",)
+app.delete("/pokemon/:id", (req, res) => {
+    const deletePoke = req.params.id
+    pokemon.splice(deletePoke, 1)
+    res.redirect("/pokemon")
+})
 
 
 // EDIT - GET - create form to edit a certain pokemon
