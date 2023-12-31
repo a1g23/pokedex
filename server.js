@@ -1,16 +1,44 @@
 //dependencies
 
 const express = require("express")
-const app = express()
 const morgan = require("morgan")
-const pokemon = require("./models/pokemon.js")
+const originalPokemon = require("./models/pokemon.js")
+const methodOverride = require("method-override");
+
+//simpler pokemon
+
+const pokemon = originalPokemon.map((poke) => {
+    return {
+        name: poke.name,
+        type: poke.type,
+        img: poke.img,
+        hp: poke.stats.hp,
+        attack: poke.stats.attack,
+        defense: poke.stats.defense
+    }
+})
+
+console.log(pokemon)
+// app objects
+
+const app = express()
 
 //middleware
 
 app.use(morgan("dev"))
 app.use(express.urlencoded({extended: true})) // body parser
-const methodOverride = require("method-override");
+app.use((req, res, next) => {
+    console.log("before method override", req.method)
+    next()
+})
 app.use(methodOverride("_method"));
+app.use((req, res, next) => {
+    console.log("after method override", req.method)
+    next()
+})
+app.use(express.static("public"))
+
+
 
 //routes
 

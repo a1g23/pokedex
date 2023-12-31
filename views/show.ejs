@@ -10,10 +10,7 @@
 
     <h1><%=poke.name%></h1>
     <img src="<%=poke.img%>">
-    <form class="editDeleteForm" action="/pokemon/<%= id %>?_method=DELETE" method="post">
-        <a class="buttonClass" href="/pokemon/<%= id %>/edit">Edit</a>
-        <input class="buttonClass" type="submit" value="DELETE">
-    </form>
+    
     
     <h2>Type</h2>
     <ul>
@@ -26,9 +23,15 @@
 
     <h2>Stats</h2>
     <ul>
-        <li>HP: <%=poke.stats.hp%></li>
-        <li>Attack: <%=poke.stats.attack%></li>
-        <li>Defense: <%=poke.stats.defense%></li>
+        <li>HP: <%=poke.hp%></li>
+        <li>Attack: <%=poke.attack%></li>
+        <li>Defense: <%=poke.defense%></li>
     </ul>
+
+    <form class="editDeleteForm" action="/pokemon/<%= id %>?_method=DELETE" method="post">
+        <a class="buttonClass" href="/pokemon/<%= id %>/edit">Edit</a>
+        <input class="buttonClass" type="submit" value="DELETE">
+    </form>
+    
 </body>
 </html>

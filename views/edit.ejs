@@ -11,10 +11,14 @@
     <form action="/pokemon/<%= id %>?_method=PUT" method="post">
         <label>Name: <input type="text" name="name" value="<%= poke.name %>"/></label>
         <label>Type: <input type="text" name="type" value="<%= poke.type %>"/></label>
-      
+        <label>Image: <input type="text" name="img" value="<%= poke.img %>"></label>
+        <label>HP: <input type="number" name="hp" value="<%= poke.hp %>"></label>
+        <label>Attack: <input type="number" name="attack" value="<%= poke.attack %>"></label>
+        <label>Defense: <input type="number" name="defense" value="<%= poke.defense %>"></label>
 
         <input class="buttonClass" type="submit" value="Edit">
 
     </form>
 </body>
 </html>
+
