@@ -14,10 +14,10 @@
     
     <h2>Type</h2>
     <ul>
-
-            <% for (let i = 0; i < poke.type.length; i++) { %>
-                <li><%=poke.type[i]%></li>
-            <% } %>
+        <% for (let i = 0; i < poke.type.length; i++) { %>
+            
+            <li><%=poke.type[i]%></li>
+        <% } %>
         
     </ul>
 
@@ -32,6 +32,6 @@
         <a class="buttonClass" href="/pokemon/<%= id %>/edit">Edit</a>
         <input class="buttonClass" type="submit" value="DELETE">
     </form>
-    
+
 </body>
 </html>

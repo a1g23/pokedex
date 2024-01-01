@@ -18,7 +18,7 @@ const pokemon = originalPokemon.map((poke) => {
     }
 })
 
-console.log(pokemon)
+//console.log(pokemon)
 // app objects
 
 const app = express()
@@ -85,8 +85,24 @@ app.get("/pokemon/:id/edit", (req, res) => {
 
 app.post("/pokemon", (req, res) => {
     // create the body of the req
-    const body = req.body
-    // push to the pokemon database
+    // manipulate "type" data to be an array
+    const typeStr = req.body.type
+    typeArr = typeStr.split(",")
+    const body = {
+        name: req.body.name,
+        type: typeArr,
+        img: req.body.img,
+        hp: req.body.hp,
+        attack: req.body.attack,
+        defense: req.body.defense,
+    }
+    
+    
+    
+
+
+
+    //push to the pokemon database
     pokemon.push(body)
     //redirect to pokemon site
     pokemon.reverse()
@@ -100,6 +116,11 @@ app.put("/pokemon/:id", (req, res) => {
     const id = req.params.id
     // create the body of the req
     const updatedPoke = req.body
+    // manipulate "type" data to be an array
+    
+
+
+
     
     // update with the new information which is in the body
     pokemon[id] = updatedPoke
