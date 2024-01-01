@@ -114,10 +114,18 @@ app.post("/pokemon", (req, res) => {
 app.put("/pokemon/:id", (req, res) => {
     // variable to be the id
     const id = req.params.id
-    // create the body of the req
-    const updatedPoke = req.body
     // manipulate "type" data to be an array
-    
+    const typeStr = req.body.type
+    typeArr = typeStr.split(",")
+    // create the body of the req
+    const updatedPoke = {
+        name: req.body.name,
+        type: typeArr,
+        img: req.body.img,
+        hp: req.body.hp,
+        attack: req.body.attack,
+        defense: req.body.defense,
+    }
 
 
 
