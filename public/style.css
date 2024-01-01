@@ -1,3 +1,5 @@
+{     outline: 2px dotted green; }
+
 .buttonClass {
       
       font-family: 'Courier New', Courier, monospace;
@@ -20,3 +22,6 @@
 .navButton {
       padding-left: 5vh;
 }
+
+/* styling the Index page */
+
