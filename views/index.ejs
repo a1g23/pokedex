@@ -13,7 +13,7 @@
         <a href="/pokemon/<%= i %>"><img src="<%=pokemon[i].img%>"></a>
         
         <form class="editDeleteForm" action="/pokemon/<%= i %>?_method=DELETE" method="post">
-            <a class="buttonClass" href="/pokemon/<%= i %>/edit">Edit</a>
+            <a class="buttonClass" href="/pokemon/<%= i %>/edit">EDIT</a>
             <input class="buttonClass" type="submit" value="DELETE">
         </form>
     <% } %>
