@@ -6,15 +6,16 @@
     <title>Pokedex</title>
 </head>
 <body>
-    <%- include("./nav.ejs")%>
-    <h1>Pokedex</h1>
-    <% for (let i = 0; i < pokemon.length; i++) { %>
-    <div class ="indexContainer"
+    <%- include("./nav.ejs") %>
+    <div class="indexContainer">
+      <% for (let i = 0; i < pokemon.length; i++) { %>
+      <a href="/index/<%= i %>">
         <div class="pokemonContainer">
-            <div class="pokemonName"></div><a href="/pokemon/<%= i %>"><h2><%=pokemon[i].name%></h2></a></div>
-            <div class="pokemonPicture"></div><a href="/pokemon/<%= i %>"><img src="<%=pokemon[i].img%>"></a></div>
+          <div class="pokemonPicture"><img src="<%= pokemon[i].img %>" /></div>
+          <div class="pokemonName"><%= pokemon[i].name %></div>
         </div>
+      </a>
+      <% } %>
     </div>
-    <% } %>
-</body>
+  </body>
 </html>
