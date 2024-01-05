@@ -1,4 +1,4 @@
-{     outline: 2px dotted green; }
+
 
 .buttonClass {
       
@@ -13,20 +13,21 @@
       
 }
 
-
-.containerNav {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 70px 0 50px;
+.title {
+      text-align: center;
 }
+
+
+
 
 .navButtonContainer {
       display:flex;
       justify-content: right;
+      margin-right: 90px;
 }
 
 .navButton {
-      padding: 2vh 5vh;
+      padding: 20px;
 }
 
 /* styling the Index page */
@@ -48,7 +49,7 @@
       align-items: center;
       margin: 16px;
       border-radius: 8px;
-      box-shadow: 2px 2px 10px 
+      box-shadow: 2px 2px 10px black
 }
 
 .pokemonPicture {
@@ -60,4 +61,4 @@
       object-fit: contain;
       width: 100%;
       height: 100%;
-    }
+}
